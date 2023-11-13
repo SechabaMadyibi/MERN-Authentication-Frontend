@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Register = (props) => {
@@ -20,7 +21,7 @@ const Register = (props) => {
     try {
       setData({ ...data, error: null });
       await axios.post(
-        "/api/auth/register",
+        "http://localhost:5000/api/auth/register",
         { name, email, password },
         {
           headers: {
@@ -78,6 +79,9 @@ const Register = (props) => {
                 Register
               </button>
             </div>
+            <p className = "mt-3 text-center" >
+              Already a user? <Link to = "/login"> Login </Link>
+            </p>
           </form>
         </div>
       </div>
