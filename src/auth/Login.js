@@ -20,7 +20,7 @@ const Login = (props) => {
     try {
       setData({ ...data, error: null });
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://authentication-h2uv.onrender.com/api/auth/login",
         { email, password },
         {
           headers: {
